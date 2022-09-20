@@ -55,7 +55,7 @@ public class AreaCheckServlet extends HttpServlet {
             } catch (Exception exception) {
                 currentTime = "no info";
             }
-            String executionTime = String.valueOf((double)(System.nanoTime() - startTime)/1_000_000_000.0);
+            String executionTime = String.format("%.9f",(Double)((System.nanoTime() - startTime)/1_000_000_000.0));
 
             RawBean raws = (RawBean) req.getSession().getAttribute("table");
             if (raws == null) raws = new RawBean();
