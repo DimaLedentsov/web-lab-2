@@ -50,9 +50,10 @@ body>table{
 
     color:blue;
     width: 100%;
+    text-align: center;
 
 }
-.columns,input[type="checkbox"]{
+input[type="checkbox"]{
     color: black;
     text-align: center;
 }

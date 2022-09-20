@@ -10,6 +10,9 @@ public class Raw implements Serializable {
     private String executionTime;
     private boolean hitFact;
 
+    public Raw(){
+
+    }
     public Raw(double x, double y, double r, String current, String execution, boolean res){
         this.x = x;
         this.y = y;

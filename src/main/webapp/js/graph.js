@@ -129,6 +129,7 @@ function getMousePosition(e) {
 }
 
 canvas.addEventListener('click', (event) => {
+        removeValidation();
         if (checkSelection(rOptions)&&!isNaN(rValue)) {
                 const x = getMousePosition(event).x;
                 const y = getMousePosition(event).y;
