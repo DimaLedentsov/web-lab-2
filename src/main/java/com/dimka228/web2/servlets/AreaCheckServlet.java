@@ -39,9 +39,9 @@ public class AreaCheckServlet extends HttpServlet {
             x = x.trim();
             y = y.trim();
             r = r.trim();
-            xValue = validateX(x);
-            yValue = validateY(y);
-            rValue = validateR(r);
+            xValue = parseX(x);
+            yValue = parseY(y);
+            rValue = parseY(r);
 
             boolean isInside =  insideCircle(xValue, yValue, rValue) ||
                                 insideTriangle(xValue, yValue, rValue) ||
@@ -77,7 +77,7 @@ public class AreaCheckServlet extends HttpServlet {
 
     }
 
-    private double validateX(String x) throws  WrongDataException{
+    private double parseX(String x) throws  WrongDataException{
         double dx;
         try{
             dx = Double.parseDouble(x);
@@ -85,10 +85,10 @@ public class AreaCheckServlet extends HttpServlet {
         } catch (NumberFormatException e){
             throw new WrongDataException("x is wrong format");
         }
-        return dx;
+        return Math.round(dx*1000.0)/1000.0;
     }
 
-    private double validateY(String y) throws WrongDataException{
+    private double parseY(String y) throws WrongDataException{
         double dy;
         try{
             dy = Double.parseDouble(y);
@@ -96,10 +96,10 @@ public class AreaCheckServlet extends HttpServlet {
         } catch (NumberFormatException e){
             throw new WrongDataException("y is wrong format");
         }
-        return dy;
+        return Math.round(dy*1000.0)/1000.0;
     }
 
-    private double validateR(String r) throws WrongDataException{
+    private double parseR(String r) throws WrongDataException{
         double dr;
         try{
             dr = Double.parseDouble(r);
@@ -107,7 +107,7 @@ public class AreaCheckServlet extends HttpServlet {
         } catch (NumberFormatException e){
             throw new WrongDataException("r is wrong format");
         }
-        return  dr;
+        return Math.round(dr*1000.0)/1000.0;
     }
 
     private boolean insideCircle(double x, double y, double r){

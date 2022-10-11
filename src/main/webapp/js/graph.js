@@ -133,8 +133,8 @@ canvas.addEventListener('click', (event) => {
         if (checkSelection(rOptions)&&!isNaN(rValue)) {
                 const x = getMousePosition(event).x;
                 const y = getMousePosition(event).y;
-                const xCenter = Math.round((x - w/2) / (hatchGap * (2/rValue))*100)/100,
-                    yCenter = Math.round((h/2 - y) / (hatchGap * (2/rValue))*100)/100;
+                const xCenter = Math.round((x - w/2) / (hatchGap * (2/rValue))*1000)/1000,
+                    yCenter = Math.round((h/2 - y) / (hatchGap * (2/rValue))*1000)/1000;
                 console.log(xCenter, yCenter);
 
                 if(xCenter>4||xCenter<-4) {

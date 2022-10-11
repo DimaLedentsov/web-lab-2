@@ -53,7 +53,7 @@
                         <b>Enter Y:</b>
                     </div>
                     <div>
-                        <input autocomplete="off" maxlength="5" type="text" name="y_coordinate" class="y field" size="19" placeholder="From -5 to 3."  >
+                        <input autocomplete="off" type="text" name="y_coordinate" class="y field" size="19" placeholder="From -5 to 3."  >
                     </div>
                 </div>
 
